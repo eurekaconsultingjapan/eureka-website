@@ -1,0 +1,19 @@
+# eureka///CONSULTING（エウレカコンサルティング）
+
+> スタートアップ・SaaS・中小企業に強い少数精鋭のコンサルティングファーム。新規事業立ち上げ・PMF支援、既存事業成長支援を、総合系コンサルティングファームの約4分の1の費用で提供する。製缶・溶接・板金の工場向けの見積支援ソフト「見積アシスタント」（β版、2026年10月公開）も提供する。所在地は神奈川県横浜市、2021年4月設立、代表は深山 航。
+
+## サービス
+- [新規事業立ち上げ・PMF支援](https://www.eureka-consult.com/services/new-business/): 市場調査・アイデア発想、プロトタイピングによる検証、事業化戦略、立ち上げ後のグロースまで一貫支援
+- [既存事業成長支援](https://www.eureka-consult.com/services/growth/): 事業戦略、マーケティング・セールス・カスタマーサクセス・プロダクトの業務と組織の変革
+- [見積アシスタント](https://www.eureka-consult.com/services/mitsumori/): 製缶・溶接・板金の工場向け。一品物・小ロットの見積を過去の見積と実績で裏づけ、受注前に利益が残るかを確認できる。ブラウザで動作、初期設定は代行、最短数営業日で利用開始。料金は相談のうえ案内
+
+## 料金（税別・個別見積り）
+- [料金・プラン](https://www.eureka-consult.com/price/): アドバイザリプラン 月3万円／実行支援プラン 月20万円〜／コンサルティングプラン 200万円〜（3か月のプロジェクト型）
+
+## 私たちについて
+- [私たちについて](https://www.eureka-consult.com/about/): ミッション、3つの約束（少数精鋭・共創でメンバーを育てる・適正な費用）、代表の経歴
+- [支援事例](https://www.eureka-consult.com/projects/): D2C EC、AI顔認証のリテール向けサービス、SaaSのカスタマーサクセス戦略、営業戦略フレームワークなど
+
+## 問い合わせ
+- 30分の無料オンライン相談（Google Meet）: https://calendar.google.com/calendar/appointments/schedules/AcZssZ3B_Oknvu9D6HwfgpC72u31F6hANczH7InZVVF3t31bd68LSMf8ciK-EhYN6NQKPqj9R4vx3wLi
+- [無料相談・お問い合わせ](https://www.eureka-consult.com/contact/) / メール info@eureka-consult.com

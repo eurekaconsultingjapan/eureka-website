@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# 生成AIの検索・回答への掲載を許可（AIO）
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.eureka-consult.com/sitemap.xml
