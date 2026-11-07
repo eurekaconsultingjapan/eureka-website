@@ -29,7 +29,7 @@
   /* GA4 */
   window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } window.gtag = window.gtag || gtag;
   if (C.ga4Id) {
-    var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + C.ga4Id; document.head.appendChild(s);
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + (C.gtagLoaderId || C.ga4Id); document.head.appendChild(s);
     gtag('js', new Date());
     gtag('set', 'user_properties', { eu_vid: vid, eu_visit_count: vc, eu_company: co });
     gtag('config', C.ga4Id, { eu_vid: vid, visit_number: vc, page_type: document.body.getAttribute('data-page') || '' });
