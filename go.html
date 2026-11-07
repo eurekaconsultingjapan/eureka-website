@@ -2,7 +2,7 @@
 <!--
   営業メールのクリック計測用の中継ページ（旧 Wix Velo ページ /go の置き換え。2026-11-07 Cloudflare Pages 移行時に復旧）。
   URL: https://www.eureka-consult.com/go?k=<トークン>&u=<b|s>
-  役割: クリックを (1) 営業メール送信リストのトラッキングWebアプリ（Apps Script）、(2) GA4、(3) サイトCRM（assets/analytics.js）に記録してから、
+  役割: クリックを (1) 営業メール送信リストのトラッキングWebアプリ（Apps Script）、(2) GA4、(3) サイトCRM（assets/analytics.js。トークンを eu_co として訪問者に紐づける）に記録してから、
         予約ページ（u=b）または会社サイト（u=s）へ自動で移動する。移動先は下の2つに固定（他のURLへは転送しない）。
   テスト: &stay=1 を付けると移動せず、この画面に記録の結果を表示する。
   元コード: 03_事業/V001_.../営業送信/ツール/mail_sender/relay/go_wix_velo.js
@@ -41,6 +41,15 @@
   var k = q.get('k') || '';
   var stay = q.get('stay') === '1';
   var dest = DEST[u];
+  /* (3) サイトCRM: メールのトークンを訪問者に紐づける（analytics.js が eu_co を読む前に書く。すでに値があれば上書きしない） */
+  if (/^[A-Za-z0-9-]{8,64}$/.test(k)) {
+    try {
+      if (!/(?:^|; )eu_co=/.test(document.cookie) && !(window.localStorage && localStorage.getItem('eu_co'))) {
+        document.cookie = 'eu_co=' + encodeURIComponent(k.slice(0, 40)) + ';path=/;max-age=' + (730 * 86400) + ';SameSite=Lax;Secure';
+        try { localStorage.setItem('eu_co', k.slice(0, 40)); } catch (e) {}
+      }
+    } catch (e) {}
+  }
   var btn = document.getElementById('go');
   var st = document.getElementById('st');
   btn.href = dest;
