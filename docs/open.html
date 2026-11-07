@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>サービス資料を開いています | eureka///CONSULTING</title>
+<style>
+  body { margin: 0; font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif; background: #0C3C60; color: #fff; display: flex; min-height: 100vh; align-items: center; justify-content: center; }
+  .box { text-align: center; padding: 32px 24px; max-width: 520px; }
+  .logo { font-weight: 700; font-size: 20px; letter-spacing: .02em; margin-bottom: 24px; }
+  .logo span { color: #E8452F; }
+  p { line-height: 1.8; margin: 0 0 20px; }
+  .btn { display: inline-block; background: #E8452F; color: #fff; text-decoration: none; font-weight: 700; padding: 14px 28px; border-radius: 6px; }
+  .note { font-size: 12px; opacity: .75; margin-top: 20px; }
+</style>
+<script src="/assets/site-config.js"></script>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body data-page="docs-open">
+<div class="box">
+  <div class="logo">eureka<span>///</span>CONSULTING</div>
+  <p>サービス資料を開いています。<br>自動で切り替わらない場合は下のボタンを押してください。</p>
+  <a id="open" class="btn" href="/docs/eureka_mitsumori_assistant.pdf" rel="noopener">資料を開く（PDF）</a>
+  <div class="note">資料に関するご相談は info@eureka-consult.com まで</div>
+</div>
+<script>
+(function () {
+  var PDF = "/docs/eureka_mitsumori_assistant.pdf";
+  var C = window.EU_CONFIG || {};
+  var q = new URLSearchParams(location.search);
+  var token = (q.get("d") || "").replace(/[^0-9a-zA-Z]/g, "").slice(0, 64);
+  var vid = "";
+  try { var m = document.cookie.match(/(?:^|; )eu_vid=([^;]*)/); vid = m ? decodeURIComponent(m[1]) : (localStorage.getItem("eu_vid") || ""); } catch (e) {}
+  /* 開封の記録（申込者ごとのトークンを受け口へ送る。失敗しても資料は開く） */
+  if (token && C.collectorUrl) {
+    var body = JSON.stringify({ type: "doc_open", token: token, vid: vid, ts: new Date().toISOString(), ua: navigator.userAgent });
+    try { if (navigator.sendBeacon) navigator.sendBeacon(C.collectorUrl, new Blob([body], { type: "text/plain" })); else fetch(C.collectorUrl, { method: "POST", mode: "no-cors", keepalive: true, headers: { "Content-Type": "text/plain" }, body: body }); } catch (e) {}
+  }
+  setTimeout(function () { location.replace(PDF); }, 600);
+})();
+</script>
+</body>
+</html>
