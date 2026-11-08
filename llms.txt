@@ -14,6 +14,14 @@
 - [私たちについて](https://www.eureka-consult.com/about/): ミッション、3つの約束（少数精鋭・共創でメンバーを育てる・適正な費用）、代表の経歴
 - [支援事例](https://www.eureka-consult.com/projects/): D2C EC、AI顔認証のリテール向けサービス、SaaSのカスタマーサクセス戦略、営業戦略フレームワークなど
 
+## よくある質問（抜粋）
+- 相談の時点で依頼内容が決まっていなくてもよい。30分の無料相談で課題の整理から進め、売り込みは行わない
+- 総合系ファームとの違いは、少数精鋭・実装まで一緒に進めて自走できる状態を残す・中間マージンのない適正な費用（約4分の1が目安）の3点
+- 見積アシスタントは、見積が社長やベテランに集中している、溶接などの工数が読み切れない、値引き時に利益が即答できない、といった悩みのある製缶・溶接・板金の工場（従業員10〜49名程度、月10件以上の見積）向け
+- AIは市場調査・資料作成・プロトタイプ開発などの作業に最大限活用し、判断と成果物への責任は代表が持つ
+- 相談内容はNDAのうえで預かり、図面・見積データの保管や外部AIサービスへの送信範囲は契約時に書面で取り決める
+- 全文: https://www.eureka-consult.com/#faq
+
 ## 問い合わせ
 - 30分の無料オンライン相談（Google Meet）: https://calendar.google.com/calendar/appointments/schedules/AcZssZ3B_Oknvu9D6HwfgpC72u31F6hANczH7InZVVF3t31bd68LSMf8ciK-EhYN6NQKPqj9R4vx3wLi
 - [無料相談・お問い合わせ](https://www.eureka-consult.com/contact/) / メール info@eureka-consult.com
