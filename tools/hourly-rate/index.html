@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>アワーレート計算ツール（無料）｜加工費・チャージの計算方法 | eureka///CONSULTING</title>
+<meta name="description" content="人件費・設備費・稼働率を入れるだけで、製造業の1時間あたりの原価（アワーレート）と見積に使うチャージを計算できる無料ツール。計算式・計算例・よくある3つの間違いも解説。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<!--OPT-HEAD-->
+<link rel="canonical" href="https://www.eureka-consult.com/tools/hourly-rate/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#072136">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="eureka///CONSULTING"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="アワーレート計算ツール（無料）｜加工費・チャージの計算方法 | eureka///CONSULTING"><meta property="og:description" content="人件費・設備費・稼働率を入れるだけで、製造業の1時間あたりの原価（アワーレート）と見積に使うチャージを計算できる無料ツール。計算式・計算例・よくある3つの間違いも解説。"><meta property="og:url" content="https://www.eureka-consult.com/tools/hourly-rate/"><meta property="og:image" content="https://www.eureka-consult.com/assets/og-mitsumori.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "url": "https://www.eureka-consult.com/tools/hourly-rate/", "name": "アワーレート計算ツール（無料）｜加工費・チャージの計算方法 | eureka///CONSULTING", "description": "人件費・設備費・稼働率を入れるだけで、製造業の1時間あたりの原価（アワーレート）と見積に使うチャージを計算できる無料ツール。計算式・計算例・よくある3つの間違いも解説。", "inLanguage": "ja", "dateModified": "2026-11-18", "publisher": {"@id": "https://www.eureka-consult.com/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://www.eureka-consult.com/"}, {"@type": "ListItem", "position": 2, "name": "見積アシスタント", "item": "https://www.eureka-consult.com/services/mitsumori/"}, {"@type": "ListItem", "position": 3, "name": "アワーレート計算ツール", "item": "https://www.eureka-consult.com/tools/hourly-rate/"}]}]}</script>
+<style>
+.hr-tool{background:#fff;border:1px solid var(--eu-gray-200);border-radius:12px;padding:24px;margin-top:24px}
+.hr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.hr-grid label{display:block;font-size:14px;font-weight:700;color:var(--eu-navy-700)}
+.hr-grid label small{display:block;font-weight:400;color:var(--eu-gray-600);font-size:12px;margin-top:2px}
+.hr-grid input{width:100%;margin-top:6px;padding:10px 12px;font-size:16px;border:1px solid var(--eu-gray-400);border-radius:8px;font-family:inherit}
+.hr-res{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.hr-res div{background:var(--eu-navy-100);border-radius:10px;padding:16px}
+.hr-res b{display:block;font-size:28px;color:var(--eu-navy-700);margin-top:4px;word-break:break-all}
+.hr-res .main{background:var(--eu-navy-700);color:#fff}.hr-res .main b{color:#fff}
+.hr-break{margin-top:16px;font-size:14px;color:var(--eu-slate);line-height:1.9}
+.hr-sim{margin-top:24px;border-top:1px dashed var(--eu-gray-400);padding-top:20px}
+.hr-sim p{margin:8px 0}.hr-sim .loss{color:var(--eu-coral-700);font-weight:700;font-size:20px}
+.art h2{margin-top:48px}.art h3{margin-top:28px;color:var(--eu-navy-700)}.art p,.art li{line-height:1.95}
+.art .fx{background:var(--eu-navy-100);padding:16px 20px;border-radius:8px;font-weight:700;overflow-x:auto}
+.art table{border-collapse:collapse;width:100%;font-size:14px}.art td,.art th{border:1px solid var(--eu-gray-200);padding:8px 10px;text-align:left}
+</style>
+<!--/OPT-HEAD-->
+</head>
+<body data-page="tool_hourly_rate" data-opt="1">
+<header class="site-header"><div class="wrap">
+<a class="brand wm" href="../../index.html" aria-label="eureka///CONSULTING トップ">eureka<span class="s">///</span>CONSULTING</a>
+<button class="menu-btn" aria-label="メニューを開く" onclick="document.querySelector('.gnav').classList.toggle('open')">メニュー</button>
+<nav class="gnav"><div class="dd"><a href="../../services/index.html">サービス</a><div class="dd-menu">
+<a href="../../services/new-business/index.html">新規事業立ち上げ・PMF支援<small>スタートアップ・SaaS・中小企業様</small></a>
+<a href="../../services/growth/index.html">既存事業成長支援<small>スタートアップ・SaaS・中小企業様</small></a>
+<a href="../../services/mitsumori/index.html">見積アシスタント（β版）<small>製缶・溶接・板金の工場様</small></a></div></div>
+<a href="../../projects/index.html">事例</a><a href="../../price/index.html">料金</a><a href="../../about/index.html">私たちについて</a><a href="../../topics/index.html">お知らせ</a>
+<a class="cta" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3B_Oknvu9D6HwfgpC72u31F6hANczH7InZVVF3t31bd68LSMf8ciK-EhYN6NQKPqj9R4vx3wLi" target="_blank" rel="noopener">無料相談を予約する</a></nav>
+</div></header>
+<main>
+<div class="page-head"><nav class="crumb" aria-label="パンくずリスト"><ol><li><a href="../../index.html">トップ</a></li><li><a href="../../services/mitsumori/index.html">見積アシスタント</a></li><li aria-current="page">アワーレート計算ツール</li></ol></nav><p class="sub">無料ツール　製缶・溶接・板金・切削の工場様向け</p><h1>アワーレート計算ツール（加工費・チャージ計算）</h1>
+<p>人件費・設備費・稼働率を入れるだけで、<span class="hl">御社の1時間あたりの原価（アワーレート）と、見積に使うチャージ</span>がわかります。登録不要・入力内容は送信されません。</p></div>
+
+<section><div class="wrap">
+<div class="hr-tool" id="hr-tool">
+<div class="hr-grid">
+<label>作業者の人数（人）<small>現場で直接手を動かす人</small><input id="n" type="number" inputmode="decimal" value="10" min="1"></label>
+<label>1人あたりの年間人件費（万円）<small>給与＋賞与＋会社負担の社会保険料</small><input id="pay" type="number" inputmode="decimal" value="480"></label>
+<label>1人あたりの年間就業時間（時間）<small>残業込み。目安：1日8h×250日＝2,000h</small><input id="hrs" type="number" inputmode="decimal" value="2000"></label>
+<label>稼働率（％）<small>就業時間のうち、図面どおりの加工に使えた割合。段取り・待ち・手直しを除く</small><input id="util" type="number" inputmode="decimal" value="75" min="1" max="100"></label>
+<label>年間の設備費（万円）<small>減価償却＋リース＋保守＋電気代</small><input id="eq" type="number" inputmode="decimal" value="600"></label>
+<label>年間の間接費（万円）<small>工場家賃・事務や営業の人件費・消耗品など</small><input id="ov" type="number" inputmode="decimal" value="900"></label>
+<label>確保したい利益率（％）<small>見積チャージに上乗せする割合</small><input id="mg" type="number" inputmode="decimal" value="15" min="0" max="90"></label>
+</div>
+<div class="hr-res">
+<div>原価アワーレート<b id="r-cost">-</b><small>1時間あたりの原価</small></div>
+<div class="main">見積に使うチャージ<b id="r-quote">-</b><small>利益込み・1時間あたり</small></div>
+<div>1分あたり<b id="r-min">-</b><small>チャージ÷60</small></div>
+</div>
+<p class="hr-break" id="r-break"></p>
+<div class="hr-sim">
+<h3 style="margin:0">この単価で、見積を超えたら利益はいくら消える？</h3>
+<p>見積の工数 <input id="qh" type="number" value="20" style="width:80px;padding:6px;font-size:16px"> 時間の案件で、実際は <input id="ov2" type="number" value="20" style="width:70px;padding:6px;font-size:16px"> ％ 延びた場合</p>
+<p>見積の利益 <b id="s-profit">-</b> のうち、<span class="loss" id="s-loss">-</span></p>
+<p class="small" id="s-note"></p>
+</div>
+</div>
+<p class="small" style="margin-top:12px">※計算は一般的な「全部原価」の考え方による目安です。工程ごと・設備ごとに分けて計算すると、より実態に近くなります。</p>
+</div></section>
+
+<section class="gray"><div class="wrap center">
+<h2 class="sec-title"><small>次の一歩</small><span>出したチャージで、過去の見積を検算してみませんか</span></h2>
+<p>「見積の工数は合っていたか」「どの工程が延びがちか」を、御社の過去の見積と実績で確かめます。<br>図面1枚・見積1件からでも、30分のオンラインで一緒に試算します。</p>
+<p style="margin-top:20px"><a class="btn-red" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3B_Oknvu9D6HwfgpC72u31F6hANczH7InZVVF3t31bd68LSMf8ciK-EhYN6NQKPqj9R4vx3wLi" target="_blank" rel="noopener">自社の見積1件で無料試算を予約する</a><span class="btn-note">30分・オンライン・無料</span></p>
+</div></section>
+
+<section><div class="wrap art">
+<h2 class="sec-title"><small>解説</small><span>アワーレートとは？計算方法と、よくある3つの間違い</span></h2>
+<h3>アワーレート（チャージ）とは</h3>
+<p>アワーレートは、工場が1時間動くのにかかる費用です。「チャージ」「時間単価」「賃率」とも呼ばれます。見積の加工費は、基本的に<b>「工数（時間）×アワーレート」</b>で決まります。工数がいくら正確でも、アワーレートがずれていれば、見積は最初から赤字か、高すぎて失注するかのどちらかになります。</p>
+<h3>計算式</h3>
+<p class="fx">原価アワーレート ＝（人件費＋設備費＋間接費）÷（人数 × 就業時間 × 稼働率）<br>見積チャージ ＝ 原価アワーレート ÷（1 − 利益率）</p>
+<p>上のツールの初期値（10人・年480万円・2,000時間・稼働率75％・設備費600万円・間接費900万円・利益率15％）で計算すると、次のとおりです。</p>
+<table><tr><th>項目</th><th>金額</th></tr><tr><td>人件費</td><td>480万円×10人＝4,800万円</td></tr><tr><td>設備費＋間接費</td><td>600万円＋900万円＝1,500万円</td></tr><tr><td>年間の費用合計</td><td>6,300万円</td></tr><tr><td>加工に使える時間</td><td>10人×2,000時間×75％＝15,000時間</td></tr><tr><td>原価アワーレート</td><td>6,300万円÷15,000時間＝4,200円</td></tr><tr><td>見積チャージ（利益15％）</td><td>4,200円÷0.85＝約4,941円</td></tr></table>
+
+<h3>よくある間違い①　稼働率を100％で計算している</h3>
+<p>就業時間のすべてを加工に使える工場はありません。段取り・材料待ち・手直し・打ち合わせの時間を除くと、実際に図面どおりの加工に使えるのは6〜8割ほどの工場が多いはずです。稼働率100％で計算すると、上の例ではアワーレートが3,150円まで下がり、<b>1時間あたり1,000円以上の原価を見積から落とす</b>ことになります。</p>
+<h3>よくある間違い②　間接費を入れていない</h3>
+<p>「現場の人件費÷時間」だけで単価を決めていると、家賃・事務の人件費・設備の保守などが見積に乗りません。受注が増えるほど忙しくなるのに、決算では利益が残らない、という状態の原因になります。</p>
+<h3>よくある間違い③　全員・全工程を同じ単価で計算している</h3>
+<p>社長と若手、正社員とパートでは時間単価が違います。溶接機やレーザー加工機を使う工程と、手作業の工程でも違います。全員同じ単価にすると、<b>高い人・高い設備が長く関わる案件ほど、気づかないうちに赤字</b>になります。まずは工場全体の単価を出し、次に工程別・担当者別に分けていくのが現実的な順番です。</p>
+
+<h3>アワーレートの次に見るべきは「工数のずれ」</h3>
+<p>単価を正しくしても、工数の見積がずれていれば利益は消えます。たとえば溶接など特定の工程が毎回2割延びている工場では、上のツールの下段のとおり、見積で確保したはずの利益15％はすべて消え、赤字になります。<b>見積の工数と実際の工数を工程ごとに並べて振り返る</b>ことが、利益を守るいちばんの近道です。</p>
+<p>当社の<a href="../../services/mitsumori/index.html">見積アシスタント</a>は、図面と過去の見積・実績から工程別の工数と原価を出し、受ける前に利益が残るかを確かめられるソフトです（現在、先行導入を受付中）。</p>
+</div></section>
+<section class="white"><div class="wrap"><h2 class="sec-title"><span>よくあるご質問</span></h2><div class="faq" style="margin-top:32px">
+<details><summary>入力した数字はどこかに送信されますか？</summary><p>送信されません。計算はお使いのブラウザの中だけで行います。</p></details>
+<details><summary>稼働率がわかりません。</summary><p>まずは75％で計算し、65％・85％でも計算して幅で見るのがおすすめです。日報があれば「加工に使った時間÷就業時間」で求められます。</p></details>
+<details><summary>工程別・設備別に計算できますか？</summary><p>このツールは工場全体の平均を出すものです。工程別に分けたい場合は、工程ごとの人数・設備費で同じ計算をするか、30分の無料相談でご相談ください。</p></details>
+</div></div></section>
+<script>
+(function(){var $=function(i){return document.getElementById(i)};var y=function(v){return Math.round(v).toLocaleString('ja-JP')+'円'};var used=false;
+function calc(){var n=+$('n').value||0,pay=(+$('pay').value||0)*1e4,h=+$('hrs').value||0,u=(+$('util').value||0)/100,eq=(+$('eq').value||0)*1e4,ov=(+$('ov').value||0)*1e4,mg=Math.min(+$('mg').value||0,90)/100;
+var t=n*h*u;if(t<=0){return}var tot=pay*n+eq+ov,c=tot/t,q=c/(1-mg);
+$('r-cost').textContent=y(c);$('r-quote').textContent=y(q);$('r-min').textContent=Math.round(q/60).toLocaleString('ja-JP')+'円';
+$('r-break').textContent='内訳（1時間あたり）：人件費 '+y(pay*n/t)+'／設備費 '+y(eq/t)+'／間接費 '+y(ov/t)+'　｜加工に使える時間 '+Math.round(t).toLocaleString('ja-JP')+'時間/年';
+var qh=+$('qh').value||0,o=(+$('ov2').value||0)/100,pf=qh*(q-c),ls=qh*o*c;$('s-profit').textContent=y(pf);
+$('s-loss').textContent=y(Math.min(ls,pf))+(ls>=pf?'（利益がすべて消え、さらに '+y(ls-pf)+' の赤字）':'（'+Math.round(ls/pf*100)+'％）が消えます');
+$('s-note').textContent='延びた '+(Math.round(qh*o*10)/10)+' 時間 × 原価アワーレート '+y(c)+' で計算';}
+document.querySelectorAll('#hr-tool input').forEach(function(e){e.addEventListener('input',function(){calc();if(!used){used=true;try{window.gtag&&gtag('event','tool_use',{tool:'hourly_rate'})}catch(x){}}})});calc();})();
+</script>
+</main>
+<section class="cta-band"><div class="wrap">
+<h2>まずは30分、無料でご相談ください</h2>
+<p>いまのお悩みをうかがい、進め方と費用の目安をお伝えします。売り込みのためのお時間ではありません。</p>
+<div class="acts"><div><a class="btn-red" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3B_Oknvu9D6HwfgpC72u31F6hANczH7InZVVF3t31bd68LSMf8ciK-EhYN6NQKPqj9R4vx3wLi" target="_blank" rel="noopener">30分の無料相談を予約する</a><span class="btn-note">＼ 1分で予約できます ／</span></div>
+<div><a class="btn-sub lg on-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSel-Zq9kwmIol1e28VQvgzaTOfnwakEaqRWg9Myn3HAryfnyw/viewform" target="_blank" rel="noopener">サービス資料をダウンロードする</a><span class="btn-note">無料・フォーム入力のみ</span></div></div>
+</div></section>
+<footer class="site-footer"><div class="wrap">
+<div><a class="logo wm" href="../../index.html">eureka<span class="s">///</span>CONSULTING</a><div class="addr">〒221-0056<br>神奈川県横浜市神奈川区金港町5-14<br>クアドリフォリオ8階<br>info@eureka-consult.com</div></div>
+<div><h4>サービス</h4><ul><li><a href="../../services/new-business/index.html">新規事業立ち上げ・PMF支援</a></li><li><a href="../../services/growth/index.html">既存事業成長支援</a></li><li><a href="../../services/mitsumori/index.html">見積アシスタント（製缶・溶接・板金向け）</a></li><li><a href="../../price/index.html">料金</a></li></ul></div>
+<div><h4>ご案内</h4><ul><li><a href="../../projects/index.html">事例</a></li><li><a href="../../about/index.html">私たちについて</a></li><li><a href="../../topics/index.html">お知らせ</a></li><li><a href="../../documents/index.html">資料ダウンロード</a></li><li><a href="../../contact/index.html">無料相談・お問い合わせ</a></li></ul></div>
+<div class="copy"><span>© 2021–2026 eureka///CONSULTING</span><a href="../../privacypolicy/index.html">プライバシーポリシー</a></div>
+</div></footer>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aeef355387e843c391f3c8e/1k6qmd29p';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--OPT-BODY-->
+<div class="sticky-cta"><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3B_Oknvu9D6HwfgpC72u31F6hANczH7InZVVF3t31bd68LSMf8ciK-EhYN6NQKPqj9R4vx3wLi" target="_blank" rel="noopener">デモを予約する（30分・無料）</a></div>
+<script src="../../assets/site-config.js?v=20261107c"></script><script src="../../assets/analytics.js?v=20261107c" defer></script>
+<!--/OPT-BODY-->
+</body>
+</html>
